@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cv_background">
+
+    <ScrollView
+        android:id="@+id/homeScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            android:paddingBottom="90dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="7dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/welcome_aboard"
+                        android:textSize="11sp"
+                        android:fontFamily="serif"
+                        android:textColor="@color/cv_text"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cyberverse_dot"
+                        style="@style/LogoText"
+                        android:textSize="36sp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/menuButton"
+                    android:layout_width="42dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="end|top"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/menu_description"
+                    android:src="@drawable/ic_menu"
+                    app:tint="@color/cv_primary" />
+            </FrameLayout>
+
+            <include
+                android:id="@+id/homeSearch"
+                layout="@layout/view_search"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/heroContainer"
+                android:layout_width="match_parent"
+                android:layout_height="235dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_large_card"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:id="@+id/heroImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/hero_image_description"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hero" />
+
+                <TextView
+                    android:id="@+id/heroTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/cv_white"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/heroSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drawer_tagline"
+                    android:textColor="@color/cv_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    app:layout_constraintStart_toStartOf="@+id/heroTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/heroTitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/heroShopButton"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="@string/nav_shop"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_white"
+                        android:textColor="@color/cv_primary"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <TextView
+                        android:id="@+id/heroLearnButton"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="@string/action_learn"
+                        android:gravity="center"
+                        android:background="@drawable/bg_button_white"
+                        android:textColor="@color/cv_primary"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/btnAllHome"
+                    android:layout_width="75dp"
+                    android:layout_height="31dp"
+                    android:text="@string/category_all"
+                    android:gravity="center"
+                    android:background="@drawable/bg_purple"
+                    style="@style/PurpleButtonText"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/btnFreeHome"
+                    android:layout_width="75dp"
+                    android:layout_height="31dp"
+                    android:text="@string/category_free"
+                    android:gravity="center"
+                    android:textColor="@color/cv_primary"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/btnShopHome"
+                    android:layout_width="90dp"
+                    android:layout_height="31dp"
+                    android:text="@string/category_devices"
+                    android:gravity="center"
+                    android:textColor="@color/cv_primary"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/btnLearnHome"
+                    android:layout_width="90dp"
+                    android:layout_height="31dp"
+                    android:text="@string/category_courses"
+                    android:gravity="center"
+                    android:textColor="@color/cv_primary"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section_featured_products"
+                style="@style/SectionTitle"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="17dp"/>
+
+            <GridLayout
+                android:id="@+id/homeProductGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="8dp">
+
+                <include
+                    android:id="@+id/itemHackRFHome"
+                    layout="@layout/item_product_hackrf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+                <include
+                    android:id="@+id/itemUbertoothHome"
+                    layout="@layout/item_product_ubertooth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+                <include
+                    android:id="@+id/itemHackyPiHome"
+                    layout="@layout/item_product_hackypi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+                <include
+                    android:id="@+id/itemKaliHome"
+                    layout="@layout/item_product_kali"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"/>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/kittyFab"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="478dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_circle_purple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_cat"
+            app:tint="@color/cv_white"
+            android:contentDescription="@string/cyberkitty_description"/>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_bottom_nav"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Drawer overlay -->
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:visibility="gone"
+        android:layout_width="338dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingEnd="25dp"
+        android:paddingTop="42dp"
+        android:background="@drawable/bg_drawer"
+        android:elevation="20dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:fontFamily="serif"/>
+
+            <TextView
+                android:id="@+id/closeDrawer"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:text="@string/action_close"
+                android:textColor="@color/cv_white"
+                android:gravity="center"
+                android:background="@drawable/bg_circle_purple"
+                android:layout_gravity="end|center_vertical"
+                android:textSize="18sp"
+                android:clickable="true"
+                android:focusable="true"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_tagline"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/cv_primary"
+            android:fontFamily="serif"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_description"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/cv_primary"
+            android:fontFamily="serif"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Navigation Groups -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="34dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_shop"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:layout_marginEnd="12dp"/>
+            <TextView
+                android:id="@+id/drawerShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_devices"
+                android:textSize="14sp"
+                android:textColor="@color/cv_primary"
+                android:background="@drawable/bg_search"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_courses"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:layout_marginEnd="12dp"/>
+            <TextView
+                android:id="@+id/drawerFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_free_courses"
+                android:textSize="14sp"
+                android:textColor="@color/cv_primary"
+                android:background="@drawable/bg_search"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+            <TextView
+                android:id="@+id/drawerPaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_paid_courses"
+                android:textSize="14sp"
+                android:textColor="@color/cv_primary"
+                android:background="@drawable/bg_search"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_certification"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:layout_marginEnd="12dp"/>
+            <TextView
+                android:id="@+id/drawerCertification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_claim_certification"
+                android:textSize="14sp"
+                android:textColor="@color/cv_primary"
+                android:background="@drawable/bg_search"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- Hidden ID mapping to prevent crashes in MainActivity logic -->
+        <View android:id="@+id/drawerDevices" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+        <View android:id="@+id/drawerClaim" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="75dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_need_guide"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/cv_primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drawer_talk_to"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/cv_primary"/>
+
+        <TextView
+            android:id="@+id/talkToKitty"
+            android:layout_width="140dp"
+            android:layout_height="34dp"
+            android:text="@string/drawer_cyberkitty_love"
+            android:gravity="center"
+            android:textColor="@color/cv_primary"
+            android:textStyle="bold"
+            android:background="@drawable/bg_search"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="28dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_help"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_info"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drawer_faq"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/cv_primary"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

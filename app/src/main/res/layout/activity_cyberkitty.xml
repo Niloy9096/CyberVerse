@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cv_background">
+
+    <!-- Header & Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp">
+
+            <ImageButton
+                android:id="@+id/kittyBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="12dp"
+                android:background="@drawable/bg_circle_white"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/back_description"
+                app:tint="@color/cv_primary"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/kittyBack"
+                android:layout_toStartOf="@id/kittyHeaderActions"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_circle_purple"
+                    android:src="@drawable/ic_cat"
+                    app:tint="@color/cv_white"
+                    android:padding="6dp"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@string/cyberkitty_description"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cyberkitty_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"
+                    android:layout_marginStart="10dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kittyHeaderActions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/kittyNewChat"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:src="@drawable/ic_add"
+                    android:contentDescription="@string/desc_new_chat"
+                    app:tint="@color/cv_primary"/>
+
+                <ImageButton
+                    android:id="@+id/kittyHistory"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="8dp"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_circle_white"
+                    android:src="@drawable/ic_history"
+                    android:contentDescription="@string/desc_chat_history"
+                    app:tint="@color/cv_primary"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:scrollbars="vertical"/>
+    </LinearLayout>
+
+    <!-- Chat Input Bar -->
+    <LinearLayout
+        android:id="@+id/chatInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="38dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/bg_search">
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="@string/add_icon_text"
+            android:textSize="25sp"
+            android:textColor="@color/cv_primary"
+            android:gravity="center"
+            android:background="@drawable/bg_circle_light"/>
+
+        <EditText
+            android:id="@+id/chatInputText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/chat_hint"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:inputType="text"
+            android:autofillHints="none"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_mic"
+            app:tint="@color/cv_text"
+            android:contentDescription="@string/mic_description"/>
+
+        <ImageView
+            android:id="@+id/sendMessage"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_send"
+            app:tint="@color/cv_text"
+            android:contentDescription="@string/send_description"/>
+    </LinearLayout>
+
+    <!-- Chat History Overlay Drawer -->
+    <LinearLayout
+        android:id="@+id/chatHistoryOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cv_background"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp">
+
+            <ImageButton
+                android:id="@+id/kittyCloseHistory"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="12dp"
+                android:background="@drawable/bg_circle_white"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/back_description"
+                app:tint="@color/cv_primary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/kittyCloseHistory"
+                android:layout_toStartOf="@id/kittyNewChatDrawer"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:text="@string/chat_history_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/cv_text"/>
+
+            <TextView
+                android:id="@+id/kittyNewChatDrawer"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_purple"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:text="@string/action_new_chat"
+                android:textColor="@color/cv_white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/historyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="18dp"
+                android:scrollbars="vertical"/>
+
+            <TextView
+                android:id="@+id/tvEmptyHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_chat_history"
+                android:textColor="@color/cv_text_secondary"
+                android:textSize="15sp"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

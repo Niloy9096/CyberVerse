@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "CyberVerse",
+    "assistant": "CyberKitty",
+    "purpose": "Cybersecurity learning, ethical hacking roadmaps, certification prep, and hardware device discovery."
+  },
+  "screens": [
+    {"name": "Home", "file": "activity_home.xml", "class": "MainActivity"},
+    {"name": "Shop", "file": "activity_shop.xml", "class": "MainActivity"},
+    {"name": "Free Courses", "file": "activity_free_courses.xml", "class": "MainActivity"},
+    {"name": "Paid Courses", "file": "activity_paid_courses.xml", "class": "MainActivity"},
+    {"name": "Certification", "file": "activity_certification.xml", "class": "MainActivity"},
+    {"name": "Course Detail", "file": "activity_course_detail.xml", "class": "MainActivity"},
+    {"name": "Product Detail", "file": "activity_product_detail.xml", "class": "MainActivity"},
+    {"name": "CyberKitty Chat", "file": "activity_cyberkitty.xml", "class": "MainActivity"},
+    {"name": "Profile", "file": "activity_profile.xml", "class": "MainActivity"},
+    {"name": "Login", "file": "activity_login.xml", "class": "MainActivity"},
+    {"name": "Signup", "file": "activity_signup.xml", "class": "MainActivity"}
+  ],
+  "features": [
+    "CyberKitty AI Chat",
+    "Cybersecurity Courses",
+    "Hardware Shop",
+    "Certification Prep",
+    "User Authentication"
+  ],
+  "authentication": {
+    "method": "Firebase Authentication & SharedPreferences local session",
+    "flows": ["Login", "Signup", "Logout"]
+  },
+  "apis": [
+    {
+      "provider": "Groq",
+      "baseUrl": "https://api.groq.com/openai/v1/",
+      "endpoint": "chat/completions",
+      "model": "openai/gpt-oss-20b"
+    }
+  ],
+  "cyberkitty": {
+    "provider": "Groq",
+    "model": "openai/gpt-oss-20b",
+    "storage": "SharedPreferences"
+  },
+  "rules": [
+    "Only describe features that actually exist in CyberVerse.",
+    "Never invent a screen, button, or workflow.",
+    "Never expose API keys or secrets."
+  ]
+}

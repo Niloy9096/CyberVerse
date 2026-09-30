@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CyberVerse" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/cv_background</item>
+        <item name="android:navigationBarColor">@color/cv_background</item>
+        <item name="colorPrimary">@color/cv_primary</item>
+        <item name="colorPrimaryDark">@color/cv_primary_dark</item>
+        <item name="colorAccent">@color/cv_primary</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="LogoText">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/logo_size</item>
+        <item name="android:textColor">@color/cv_primary_dark</item>
+    </style>
+
+    <style name="PageTitle">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textColor">@color/cv_text</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/section_size</item>
+        <item name="android:textColor">@color/cv_text</item>
+    </style>
+
+    <style name="PurpleButtonText">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/cv_white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

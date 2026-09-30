@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cv_background">#F5F2FF</color>
+    <color name="cv_primary">#7856FF</color>
+    <color name="cv_primary_dark">#6845E8</color>
+    <color name="cv_primary_light">#A996FF</color>
+    <color name="cv_white">#FFFFFF</color>
+    <color name="cv_text">#111111</color>
+    <color name="cv_text_secondary">#777777</color>
+    <color name="cv_text_light">#999999</color>
+    <color name="cv_border">#E6E2F0</color>
+</resources>

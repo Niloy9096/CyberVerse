@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="205dp"
+    android:layout_columnWeight="1"
+    android:layout_gravity="fill"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/bg_card">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/badge_most_talked"
+        android:textSize="11sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:src="@drawable/isc2"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/provider_isc2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/isc2_pledge"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:maxLines="2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_rating_5_stars"
+        android:textSize="11sp"
+        android:textColor="@color/cv_primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/provider_isc2"
+        android:textSize="11sp"
+        android:textColor="@color/cv_text_light"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/certification_course_desc"
+        android:textSize="11sp"
+        android:textColor="@color/cv_text_light"
+        android:maxLines="2"/>
+</LinearLayout>

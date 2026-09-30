@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_margin">20dp</dimen>
+    <dimen name="search_height">42dp</dimen>
+    <dimen name="logo_size">36sp</dimen>
+    <dimen name="title_size">26sp</dimen>
+    <dimen name="section_size">23sp</dimen>
+    <dimen name="body_size">12sp</dimen>
+</resources>

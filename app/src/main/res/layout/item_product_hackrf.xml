@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="205dp"
+    android:layout_columnWeight="1"
+    android:layout_gravity="fill"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/bg_card"
+    android:clickable="true"
+    android:focusable="true"
+    android:tag="HackRF One">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/badge_best_selling"
+        android:textSize="11sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:src="@drawable/hackrf"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/product_name_hackrf"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name_hackrf"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:maxLines="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_rating_5_stars"
+        android:textSize="11sp"
+        android:textColor="@color/cv_primary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_hackrf"
+        android:textSize="11sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/product_description_hackrf_short"
+        android:textSize="11sp"
+        android:textColor="@color/cv_text_light"
+        android:maxLines="2"/>
+</LinearLayout>
